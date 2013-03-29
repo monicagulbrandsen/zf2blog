@@ -3,9 +3,18 @@
 {{ headTitle('Blog - ') }}
 {% endblock %}
 
+  {% if(zfcUserIdentity().id>0)  %} 
+<div class="row">
+    <div class="span12">
+                        <a href="/blog/add">
+						<button class="btn btn-large btn-primary" type="button">New post</button></a>
+    </div>
+</div>
+{% endif %}
+
 <div class="row">
 {% for blog in blogs %}
-    <div class="span6">
+    <div class="span12">
         <h2>{{ blog.title }}</h2>
         
         <p><span class="label label-important">{{blog.badge}}</span></p>
